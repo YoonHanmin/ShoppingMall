@@ -1,4 +1,4 @@
-package com.project.shoppingmall;
+package com.project.shoppingmall.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
