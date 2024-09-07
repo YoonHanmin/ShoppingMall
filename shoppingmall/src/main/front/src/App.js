@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import axios
- from 'axios';
+import axios  from 'axios';
+import Header from "./component/header";
+
 
  import { BrowserRouter} from "react-router-dom";
 
@@ -16,13 +17,13 @@ function App() {
   return (
 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Header></Header>
+       
         <div>
-            <button onClick={()=>selectData()}>조회</button>
+            {<button onClick={()=>selectData()}>조회</button> }
         </div>
 
-      </header>
+     
     </div>
   );
 }
