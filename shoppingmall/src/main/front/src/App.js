@@ -3,6 +3,7 @@ import './App.css';
 import axios  from 'axios';
 import Header from "./component/header";
 
+
  import { BrowserRouter} from "react-router-dom";
 
 function selectData(){
@@ -14,10 +15,8 @@ function selectData(){
 
 function App() {
   return (
-  <>
 
     <div className="App">
-
       <Header></Header>
        
         <div>
@@ -26,7 +25,6 @@ function App() {
 
      
     </div>
-    </>
   );
 }
 

@@ -4,10 +4,26 @@
     align-items: center; /* 항목을 수직으로 가운데 정렬 */
     padding: 0 20px; /* 좌우 패딩 */
     height: 80px; /* 헤더 높이 설정 */
-    background-color: #f8f9fa; /* 배경 색상 (선택 사항) */
+    background-color: white; /* 배경 색상 (선택 사항) */
+}
+.header.active {
+    border-bottom: 2px solid #f8f9fa; /* hover 시 border-bottom 색상 변경 */
 }
 
+.nav{
+    display: none;
+    width: 100%;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+.header .logo,
+.header .menu,
+.header .auth{
+    height: 100%; /* 자식 요소들의 높이를 부모 요소의 100%로 설정 */
+}
 .logo {
+    margin-left: 20px;
     flex: 1; /* 남은 공간의 1부분을 차지 */
     display: flex;
     align-items: center; /* 수직 중앙 정렬 */
@@ -25,7 +41,8 @@
     flex: 2; /* 남은 공간의 2부분을 차지 */
 }
 
-.menu ul {
+.menu-list {
+    height: 100%;
     list-style-type: none; /* 기본 불릿 제거 */
     padding: 0;
     margin: 0;
@@ -33,8 +50,30 @@
     justify-content: center; /* 메뉴 항목들을 가로로 중앙 정렬 */
 }
 
-.menu li {
+.menu-list li {
+    height: 100%;
     margin: 0 15px; /* 항목 사이의 간격 */
+    font-weight: bold;
+    font-size: 20px;
+
+    color : black;
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+}
+
+.menu-list li.inactive {
+    margin: 0 15px; /* 항목 사이의 간격 */
+    font-weight: bold;
+    font-size: 18px;
+    color : gray;
+}
+.menu-list li.active {
+ border-bottom: 4px solid black;
+}
+.menu-list li:hover {
+    color: black; /* hover 시 텍스트 색상 강조 */
+    font-size : 26px;
 }
 
 .auth {
@@ -48,13 +87,25 @@
 }
 
 .auth ul {
+    height: 100%;
     list-style-type: none; /* 기본 불릿 제거 */
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center; 
     justify-content: center; /* 메뉴 항목들을 가로로 중앙 정렬 */
 }
 
 .auth li {
     margin: 0 15px; /* 항목 사이의 간격 */
+}
+.layer-shadow{
+    display: none;
+    height: 200px;
+    width: 100%;
+    background-color: aquamarine;
+}
+.layer-shadow .on
+{   display: block;
+    
 }
