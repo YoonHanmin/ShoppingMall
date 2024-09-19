@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import axios  from 'axios';
 import Header from "./component/header";
-
-
+import Footer from "./component/footer";
+import Content from './component/content';
  import { BrowserRouter} from "react-router-dom";
 
 function selectData(){
@@ -17,11 +17,9 @@ function App() {
   return (
 
     <div className="App">
-      <Header></Header>
-       
-        <div>
-            {<button onClick={()=>selectData()}>조회</button> }
-        </div>
+      <Header className='Header'></Header>
+       <Content className='Content'></Content>
+      <Footer className='Footer'></Footer>
 
      
     </div>
