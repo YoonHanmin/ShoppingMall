@@ -33,13 +33,7 @@ function Footer(){
       </ul>
     </div>
     
-    <div className="footer-section social-media">
-      <h3>소셜 미디어</h3>
-      <a href="https://facebook.com" target="_blank" class="social-icon">FB</a>
-      <a href="https://instagram.com" target="_blank" class="social-icon">IG</a>
-      <a href="https://twitter.com" target="_blank" class="social-icon">TW</a>
-      <a href="https://linkedin.com" target="_blank" class="social-icon">LI</a>
-    </div>
+
     
     <div className="footer-section newsletter">
       <h3>뉴스레터 구독</h3>
@@ -48,7 +42,7 @@ function Footer(){
     
     <div className="footer-section payment-methods">
       <h3>결제 방법</h3>
-      <img src="/images/payment-icons.png" alt="Payment Methods"/>
+      <img src="/assets/payment-icons.png" width='30px' height='30px' alt="Payment Methods"/>
     </div>
     
     <div className="footer-section site-map">
