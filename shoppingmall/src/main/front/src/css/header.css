@@ -3,6 +3,7 @@
     justify-content: space-between; /* 항목 사이의 간격을 자동으로 조정 */
     align-items: center; /* 항목을 수직으로 가운데 정렬 */
     padding: 0 20px; /* 좌우 패딩 */
+    margin-top: 10px;
     height: 60px;
     background-color: white; /* 배경 색상 (선택 사항) */
 }
