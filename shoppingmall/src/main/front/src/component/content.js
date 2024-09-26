@@ -23,38 +23,43 @@ function Content(){
 
                 <div className="col-3 product-card">
                 <img src="/assets/product/product.jpg" alt="Product 1" className="product-image" />
+                <div>
                 <p className="product-name">오버핏 데님셔츠(셋업)</p>
-                 <p className="product-description"></p>
                 <p className="product-price">36,900</p>
-                <button className="add-to-cart">Add to Cart</button>
+                 <p className="product-description"></p>
+                </div>
             </div>
             <div className="col-3 product-card">
                 <img src="/assets/product/product.jpg" alt="Product 1" className="product-image" />
+                <div>
                 <p className="product-name">오버핏 데님셔츠(셋업)</p>
-                 <p className="product-description"></p>
                 <p className="product-price">36,900</p>
-                <button className="add-to-cart">Add to Cart</button>
+                 <p className="product-description"></p>
+                </div>
             </div>
             <div className="col-3 product-card">
                 <img src="/assets/product/product.jpg" alt="Product 1" className="product-image" />
+                <div>
                 <p className="product-name">오버핏 데님셔츠(셋업)</p>
-                 <p className="product-description"></p>
                 <p className="product-price">36,900</p>
-                <button className="add-to-cart">Add to Cart</button>
+                 <p className="product-description"></p>
+                </div>
             </div>
             <div className="col-3 product-card">
                 <img src="/assets/product/product.jpg" alt="Product 1" className="product-image" />
+                <div>
                 <p className="product-name">오버핏 데님셔츠(셋업)</p>
-                 <p className="product-description"></p>
                 <p className="product-price">36,900</p>
-                <button className="add-to-cart">Add to Cart</button>
+                 <p className="product-description"></p>
+                </div>
             </div>
             <div className="col-3 product-card">
                 <img src="/assets/product/product.jpg" alt="Product 1" className="product-image" />
+                <div>
                 <p className="product-name">오버핏 데님셔츠(셋업)</p>
-                 <p className="product-description"></p>
                 <p className="product-price">36,900</p>
-                <button className="add-to-cart">Add to Cart</button>
+                 <p className="product-description"></p>
+                </div>
             </div>
            
 
