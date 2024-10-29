@@ -8,28 +8,12 @@ function Content(){
     const [error,setError] = useState(null);
     const [loading,setLoading] = useState(true);
     useEffect(()=> {
-    const fetchProducts = async() => {
-        try{
-            const response = await axios.get('/product/all');
-            console.log(response.data);
-            if(response.status === 200){
-                setProducts(response.data);
-            }else{
-                setError("There's no Products.")
-            }
-
-        }catch(err){
-           console.error("Error fetching products:", err); // 전체 오류 정보 출력
-               setError(err.message);
-        }finally{
-            setLoading(false);
-        }
-
-    }
+  
      function getProducts(){
             axios
                 .get("product/all")
                 .then((response) => {
+                    setLoading(false);
                     console.log(response.data);
                     setProducts(response.data);
 
@@ -43,7 +27,6 @@ function Content(){
 
 
     getProducts();
-//    fetchProducts();
     },[]);
     if(loading){
         return <div>Loading...</div>
@@ -61,11 +44,11 @@ function Content(){
             <h1>Weekly Best </h1>
             </div>
             <div className='container-nav'>
-                <ul>
-                    <li>ALL</li>
-                    <li>WOMEN</li>
-                    <li>MAN</li>
-                    <li>SALE</li>
+                <ul >
+                    <li key="ALL">ALL</li>
+                    <li key="WOMEN">WOMEN</li>
+                    <li key="MAN">MAN</li>
+                    <li key="SALE">SALE</li>
                     
                 </ul>
             </div>
@@ -73,7 +56,7 @@ function Content(){
             <div className='row product-list'>
                 {products.map(product => (
                      <div className="col-3 product-card" key = {product.id}>
-                        <img src={product.image_url || "/assets/product/product.jpg"} alt="Product 1" className="product-image" />
+                        <img src={product.image_url} alt="Product 1" className="product-image" />
                         <p className="product-name">{product.name}</p>
                         <p className="product-description">{product.description}</p>
                         <p className="product-price">{product.price}</p>
