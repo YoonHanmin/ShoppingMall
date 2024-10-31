@@ -31,4 +31,19 @@ public class ProductController {
 
         return ResponseEntity.ok(products);
     }
+
+    @GetMapping(value = "/{category}")
+    public ResponseEntity<List<Product>> getProductWomen(@PathVariable String category){
+
+        List<Product> products = productService.getProductCategory(category);
+        logger.debug("products {}",products.get(0).toString());
+        if(products == null || products.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(products);
+    }
+
+
+
 }

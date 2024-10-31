@@ -16,4 +16,10 @@ public class ProductService {
         List<Product> products = productRepository.findAll();
         return products;
     }
+
+    public List<Product> getProductCategory(String category){
+        List<Product> products = productRepository.findByCategory(category);
+        return products;
+    }
+
 }

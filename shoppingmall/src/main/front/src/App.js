@@ -4,30 +4,34 @@ import axios  from 'axios';
 import Header from "./component/header";
 import Footer from "./component/footer";
 import Content from './component/content';
- import { BrowserRouter} from "react-router-dom";
+import LoginPage from './component/loginPage';
+ import { BrowserRouter as Router, Route, Routes, useNavigate,useLocation } from "react-router-dom";
+import MainPage from './component/mainPage';
 
 
 
 function App() {
-  function selectData(){
-    axios.post('/test',["가","나","다"])
-    .then(function(res){
-        console.log(res)
-    });
+  return (
+    <Router>
+      <Main />
+    </Router>
+  );
 }
-  useEffect(()=> {
-    
-    selectData();
-  },[]);
+
+function Main() {
+  const location = useLocation();
 
   return (
-
     <div className="App">
-      <Header className='Header'></Header>
-       <Content className='Content'></Content>
-      <Footer className='Footer'></Footer>
-
-     
+      <Header className='Header' />
+      <div className="content-wrapper">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </div>
+      {/* 현재 경로가 '/login'이 아닐 때만 Footer를 표시 */}
+      {location.pathname !== '/login' && <Footer className='Footer' />}
     </div>
   );
 }

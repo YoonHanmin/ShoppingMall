@@ -21,5 +21,7 @@ public class Product {
     private int quantity;
     private String description;
     private String image_url;
+    private String category;
+
 
 }

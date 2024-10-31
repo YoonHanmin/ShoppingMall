@@ -44,7 +44,7 @@ function Header(){
        <div className="row header">
       <div className="col-3 logo">
         <a href="/">
-          <img src='/assets/top_logo_pc.png' alt="logo" />
+          <img src='/assets/top_logo1.png' alt="logo" />
         </a>
       </div>
       <div className="col-6 menu">
@@ -59,17 +59,17 @@ function Header(){
         <ul>
           <li>
             <a href="/search">
-              <img src="/assets/search.png" alt="search" width="40" height="40" />
+              <img src="/assets/search.png" alt="search" width="30" height="30" />
             </a>
           </li>
           <li>
-            <a href="/mypage">
-              <img src="/assets/mypage.png" alt="mypage" width="40" height="40" />
+            <a href="/login">
+              <img src="/assets/mypage.png" alt="mypage" width="30" height="30" />
             </a>
           </li>
           <li>
             <a href="/cart">
-              <img src="/assets/cart.png" alt="cart" width="40" height="40" />
+              <img src="/assets/cart.png" alt="cart" width="30" height="30" />
             </a>
           </li>
         </ul>
