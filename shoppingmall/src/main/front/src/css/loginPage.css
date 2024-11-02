@@ -31,7 +31,7 @@
     padding: 10px; /* 패딩 추가 */
     
     border-radius: 4px; /* 둥근 모서리 */
-    margin-bottom: 20px; /* 입력 필드와 버튼 간 간격 */
+   
 }
 .container-input input{
     margin-bottom: 30px;
@@ -54,4 +54,27 @@
 
 .container-button button:hover {
     background-color: #0056b3; /* 호버 시 배경색 변경 */
+}
+
+.container-option {
+    color : gray;
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 양쪽 끝 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    margin-bottom: 20px; /* 입력 필드와의 간격 조정 */
+    font-size: 14px; /* 글자 크기 조정 */
+    margin-left: 12px;
+}
+
+.auto-login {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.auto-login input {
+    margin-right: 5px; /* 체크박스와 텍스트 간격 조정 */
+}
+
+.container-regist{
+    margin-bottom: 20px; /* 입력 필드와의 간격 조정 */
 }
