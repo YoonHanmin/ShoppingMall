@@ -40,42 +40,10 @@ function MainPage(){
     return (
         <>
         <div className='container-wrap'>
-            <div className='container-header'>
-            <h1>Weekly Best </h1>
-            </div>
-             <div className='container-nav'>
-            <ul>
-                <li onClick={() => handleClick('ALL')}>
-                    <span>ALL</span>
-                    {badgeVisible === 'ALL' && <span className="badge-dot"></span>}
-                </li>
-                <li onClick={() => handleClick('WOMEN')}>
-                    <span>WOMEN</span>
-                    {badgeVisible === 'WOMEN' && <span className="badge-dot"></span>}
-                </li>
-                <li onClick={() => handleClick('MAN')}>
-                    <span>MAN</span>
-                    {badgeVisible === 'MAN' && <span className="badge-dot"></span>}
-                </li>
-                <li onClick={() => handleClick('SALE')}>
-                    <span>SALE</span>
-                    {badgeVisible === 'SALE' && <span className="badge-dot"></span>}
-                </li>
-            </ul>
-        </div>
-
-            <div className='row product-list'>
-                {products.map(product => (
-                     <div className="col-3 product-card" key = {product.id}>
-                     <img src={`/assets/product/${product.image_url}`} alt="Product 1" className="product-image" />
-                        <p className="product-name">{product.name}</p>
-                        {/* <p className="product-description">{product.description}</p> */}
-                        <p className="product-price">₩{product.price.toLocaleString()}</p>
-                        <button className="add-to-cart">Add to Cart</button>
-                    </div>
-                ))}
-
-        </div>
+           <div>
+           <img src='/assets/main1.png' alt="logo" height="500px" width="100%"  />
+           <img src='/assets/main2.png' alt="logo" />
+           </div>
         </div>
         </>
     )

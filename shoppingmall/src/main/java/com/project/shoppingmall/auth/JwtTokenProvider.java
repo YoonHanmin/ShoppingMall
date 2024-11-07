@@ -1,11 +1,15 @@
 package com.project.shoppingmall.auth;
 
 import com.project.shoppingmall.dto.TokenInfo;
+import com.project.shoppingmall.service.ProductService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -25,9 +29,11 @@ import java.util.stream.Collectors;
 @Slf4j
 @Component
 public class JwtTokenProvider {
-
+    @Autowired
+    private static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
     private final Key key;
 //    secretKey 가져와 decoding
+
     public JwtTokenProvider(@Value("${jwt.secret}") String secretKey){
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         this.key = Keys.hmacShaKeyFor(keyBytes);
@@ -86,16 +92,16 @@ public class JwtTokenProvider {
             return true;
 
         }catch (io.jsonwebtoken.security.SignatureException | MalformedJwtException e){
-            log.info("Invalid JWT Token",e);
+            logger.info("Invalid JWT Token",e);
 
         }catch (ExpiredJwtException e){
-            log.info("Expired JWT Token",e);
+            logger.info("Expired JWT Token",e);
 
         }catch (UnsupportedJwtException e){
-            log.info("Unsupported JWT Token",e);
+            logger.info("Unsupported JWT Token",e);
 
         }catch (IllegalArgumentException e){
-            log.info("JWT claims string is empty.",e);
+            logger.info("JWT claims string is empty.",e);
 
         }
         return false;

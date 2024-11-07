@@ -28,6 +28,7 @@ function Main() {
       <div className="content-wrapper">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/purchase" element={<Content />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Routes>

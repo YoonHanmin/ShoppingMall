@@ -1,6 +1,7 @@
 import React,{useEffect,useState } from 'react';
 import '../css/content.css';
 import axios  from 'axios';
+import Button from './button';
 function Content(){
  
     function getProducts(category){
@@ -49,13 +50,13 @@ function Content(){
                     <span>ALL</span>
                     {badgeVisible === 'ALL' && <span className="badge-dot"></span>}
                 </li>
-                <li onClick={() => handleClick('WOMEN')}>
-                    <span>WOMEN</span>
-                    {badgeVisible === 'WOMEN' && <span className="badge-dot"></span>}
+                <li onClick={() => handleClick('GALAXY')}>
+                    <span>갤럭시탭</span>
+                    {badgeVisible === 'GALAXY' && <span className="badge-dot"></span>}
                 </li>
-                <li onClick={() => handleClick('MAN')}>
-                    <span>MAN</span>
-                    {badgeVisible === 'MAN' && <span className="badge-dot"></span>}
+                <li onClick={() => handleClick('APPLE')}>
+                    <span>아이패드</span>
+                    {badgeVisible === 'APPLE' && <span className="badge-dot"></span>}
                 </li>
                 <li onClick={() => handleClick('SALE')}>
                     <span>SALE</span>
@@ -71,7 +72,9 @@ function Content(){
                         <p className="product-name">{product.name}</p>
                         {/* <p className="product-description">{product.description}</p> */}
                         <p className="product-price">₩{product.price.toLocaleString()}</p>
-                        <button className="add-to-cart">Add to Cart</button>
+                        <div className='btn'>
+                        <Button url="/add" name="구매하기"/>
+                        </div>
                     </div>
                 ))}
 

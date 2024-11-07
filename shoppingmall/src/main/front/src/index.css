@@ -1,22 +1,20 @@
+/* @font-face로 커스텀 폰트 정의 */
 @font-face {
   font-family: 'MyFont';
-  src: url('/public/assets/fonts/NotoSansKR-VariableFont_wght.ttf') format('ttf');
-      
+  src: url('/public/assets/fonts/NotoSansKR-VariableFont_wght.ttf') format('truetype'); /* public/assets/fonts 폴더 경로 */
   font-weight: normal;
   font-style: normal;
 }
 
-
+/* 기본 body 스타일에 폰트 적용 */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'MyFont', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* code 요소에도 동일 폰트 적용 */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'MyFont', monospace;
 }

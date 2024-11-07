@@ -113,3 +113,9 @@
 {   display: block;
     
 }
+
+
+.no-style-link {
+    text-decoration: none;  /* 밑줄 제거 */
+    color: inherit;  /* 부모 요소의 텍스트 색상 그대로 사용 */
+  }

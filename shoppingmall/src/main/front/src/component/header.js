@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 import '../css/header.css';
-
+import Button from './button';
+import { Link } from 'react-router-dom';
 function Header(){
     useEffect(()=>
     {
@@ -43,36 +44,20 @@ function Header(){
         <>
        <div className="row header">
       <div className="col-3 logo">
-        <a href="/">
-          <img src='/assets/top_logo1.png' alt="logo" />
-        </a>
+        <Link to="/">
+          <img src='/assets/toplogo.png' alt="logo" />
+        </Link>
       </div>
       <div className="col-6 menu">
         <ul className="menu-list">
-          <li>베스트</li>
-          <li>할인상품</li>
-          <li>MEN</li>
-          <li>WOMEN</li>
+          <li><Link to="/purchase" className="no-style-link">구매하기</Link></li>
+          <li>판매하기</li>
+          <li>추가3</li>
+          <li>추가4</li>
         </ul>
       </div>
       <div className="col-3 auth">
-        <ul>
-          <li>
-            <a href="/search">
-              <img src="/assets/search.png" alt="search" width="30" height="30" />
-            </a>
-          </li>
-          <li>
-            <a href="/login">
-              <img src="/assets/mypage.png" alt="mypage" width="30" height="30" />
-            </a>
-          </li>
-          <li>
-            <a href="/cart">
-              <img src="/assets/cart.png" alt="cart" width="30" height="30" />
-            </a>
-          </li>
-        </ul>
+      <Button url="/login" name="시작하기"/>
       </div>
       <div className="layer-shadow" id="layer-shadow"></div>
     </div>
