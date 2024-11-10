@@ -35,6 +35,7 @@ public class SecurityConfig {
                         .requestMatchers("/admin").hasRole("ADMIN") // /admin 경로는 ADMIN 역할이 필요
                         .anyRequest().authenticated() // 그 외의 모든 요청은 인증 필요
                 )
+                .formLogin(form -> form.disable())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 상태 없는 세션 관리
                 )

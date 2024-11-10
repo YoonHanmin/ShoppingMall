@@ -31,27 +31,34 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserLoginRequestDto userLoginRequestDto) {
-        String username = userLoginRequestDto.getUsername();
+        String email = userLoginRequestDto.getEmail();
         String password = userLoginRequestDto.getPassword();
 
         try {
-            TokenInfo tokenInfo = userService.login(username, password);
+            TokenInfo tokenInfo = userService.login(email, password);
             return ResponseEntity.ok(tokenInfo);
         }catch (BadCredentialsException e){
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("비밀번호가 일치하지 않습니다.");
         }catch (UsernameNotFoundException e) {
             // 사용자 정보가 없는 경우
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body("일치하는 ID가 없습니다.");
         } catch (Exception e) {
-            // 기타 예기치 않은 오류 처리
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("서버 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
         }
     }
     @PostMapping("/register")
-    public void register(@RequestBody UserLoginRequestDto userLoginRequestDto){
-        User user = userService.registerUser(userLoginRequestDto);
+    public ResponseEntity<String> register(@RequestBody UserLoginRequestDto userLoginRequestDto) {
+        try {
+            User user = userService.registerUser(userLoginRequestDto);
+            return ResponseEntity.status(HttpStatus.CREATED).body("회원가입 성공!");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
 }

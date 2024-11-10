@@ -15,7 +15,7 @@ margin-top: 10px;
     border-radius: 30px;
 
     &:hover{
-    background-color : #0056b3}
+    background-color : #4b0082}
 }`;
 
 function Button(props) {

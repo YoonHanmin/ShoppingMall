@@ -25,9 +25,9 @@ public class UserService {
     private final JwtTokenProvider jwtTokenProvider;
     private final PasswordEncoder passwordEncoder;
 
-    public TokenInfo login(String username,String password) {
+    public TokenInfo login(String email,String password) {
         try {
-            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(email, password);
 
             Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
 
@@ -53,7 +53,7 @@ public class UserService {
 
         // User 객체 생성 (여기서 암호화된 비밀번호를 저장)
         User user = new User();
-        user.setUsername(userLoginRequestDto.getUsername());
+
         user.setPassword(encodedPassword);
         user.setEmail(userLoginRequestDto.getEmail());// 암호화된 비밀번호 저장
 
