@@ -1,10 +1,12 @@
 package com.project.shoppingmall.controller;
 
 
+import com.project.shoppingmall.auth.JwtTokenProvider;
+import com.project.shoppingmall.domain.Social_kakao;
 import com.project.shoppingmall.domain.User;
 import com.project.shoppingmall.dto.TokenInfo;
 import com.project.shoppingmall.dto.UserLoginRequestDto;
-import com.project.shoppingmall.service.ProductService;
+import com.project.shoppingmall.service.KaKaoService;
 import com.project.shoppingmall.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,16 +17,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Optional;
 
 @Slf4j
 @RestController
 @RequiredArgsConstructor
 public class AuthController {
 
+    private KaKaoService kaKaoService;
+    private JwtTokenProvider jwtTokenProvider;
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
@@ -59,6 +63,24 @@ public class AuthController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
+    }
+
+
+    @PostMapping("/kakao/login")
+    public ResponseEntity<String> kakaoLogin(@RequestParam String code){
+
+        String accessToken = kaKaoService.getKakaoAccessToken(code);
+
+        HashMap<String,Object> userInfo  = kaKaoService.getKakaoUserInfo(accessToken);
+        Long kakaoId = (Long) userInfo.get("id");
+        String email = (String) userInfo.get("email");
+        String nickname = (String) userInfo.get("nickname");
+
+        kaKaoService.register(userInfo);
+        
+        // jwt토큰 생성
+
+        return ResponseEntity.ok("success");
     }
 
 }

@@ -1,0 +1,110 @@
+/* 오류 메시지 스타일 */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px; /* input과의 간격을 조정 */
+    display: block; /* 오류 메시지가 아래에 표시되도록 설정 */
+  }
+  
+  /* 전체 레이아웃 */
+  .container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transform: translateY(-20%);
+  }
+  
+  .container-main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 30%;
+    margin: 30px 300px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 입력 필드 스타일 */
+  .container-input {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container-input input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    height: 40px;
+    box-sizing: border-box;
+  }
+  
+  /* 이메일과 인증 버튼을 수평으로 배치 */
+  .container-input .email {
+    display: flex;
+    width: 100%;
+  }
+  
+  .container-input .email input {
+    flex: 7;
+    padding-right: 10px;
+    height: 40px;
+  }
+  
+  .container-input .email .email-auth {
+    flex: 3;
+    padding: 10px;
+    background-color: slateblue;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    transition: background-color 0.3s;
+  }
+  .email-auth{
+    margin-left: 10px;
+  }
+  .container-input .email .email-auth:hover {
+    background-color: #4b0082;
+  }
+  
+  /* 버튼 스타일 */
+  .container-button {
+    width: 100%;
+  }
+  
+  .container-button button {
+    width: 100%;
+    padding: 10px;
+    background-color: slateblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .container-button button:hover {
+    background-color: #4b0082;
+  }
+  
+  /* 레지스터 링크 스타일 */
+  .container-regist {
+    margin-bottom: 20px;
+  }
+  
+  /* 기본 폰트와 링크 색상 */
+  a {
+    text-decoration: none;
+    color: slateblue;
+  }
+  
+  a:hover {
+    color: #4b0082;
+  }
+  

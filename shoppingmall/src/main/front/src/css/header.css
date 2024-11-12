@@ -14,12 +14,7 @@
     border-bottom: 2px solid #f8f9fa; /* hover 시 border-bottom 색상 변경 */
 }
 
-.nav{
-    display: none;
-    width: 100%;
-    height: 200px;
-    background-color: aquamarine;
-}
+
 
 .header .logo,
 .header .menu,
