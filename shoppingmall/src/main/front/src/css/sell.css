@@ -6,17 +6,33 @@ body {
     background-color: #f7f7f7;
     color: #333;
   }
-  
+  .container{
+    display : flex;
+    justify-content: center;
+    gap : 10px;
+
+  }
   .sell-container {
     padding: 40px 20px;
+    width : 800px;
     max-width: 800px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
   }
   
+  .order-container{
+    padding: 40px 20px;
+    width: 600px;
+    /* max-height: 300px; */
+    /* margin: 0 auto; */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
   h1 {
     font-size: 24px;
     font-weight: 600;
@@ -100,7 +116,17 @@ body {
     transition: background-color 0.3s ease;
     margin-top: 20px;
   }
-  
+  .select-button {
+    padding: 16px;
+    background-color: slateblue;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
   .submit-button:hover {
     background-color: #4b0082;
   }
@@ -176,3 +202,78 @@ body {
   .reset-icon {
     margin-right: 10px;  /* 아이콘과 텍스트 사이에 간격을 줍니다 */
   }
+
+  .step2-container{
+    display: flex;
+    justify-content: center;
+    gap : 20px;
+  }
+  .step2-box{
+    padding: 10px 5px;
+    width: 300px;
+    height: 300px;
+    /* margin: 0 auto; */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .step2-box:hover{
+    background-color: #ccaee2;
+  }
+
+  .sell-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    border-color: #4b0082;
+    outline: none;
+  }
+  
+  .form-group input {
+    margin-top: 5px;
+  }
+  
+  /* Product Item Display */
+  .products {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .product-item p {
+    margin: 5px 0;
+  }
+  
