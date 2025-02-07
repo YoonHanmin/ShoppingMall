@@ -115,7 +115,13 @@ function Sell() {
       sellerEmail,
     };
 
-
+    if (Object.values(formData).some(value => value === '')) {
+      alert("누락된 값이 있습니다!");
+    } else {
+      console.log("All form data is valid.");
+      // 모든 데이터가 유효할 경우 실행할 로직
+    }
+    
     console.log(formData);
 
     // formData 판매접수 api 작성해주세요.
@@ -160,6 +166,12 @@ function Sell() {
 
   return (
     <>
+
+      <div className = "sell-header">
+          <span>
+            <h1>판매하기</h1>
+          </span>
+      </div>
     <div className = "container">
     <div className="sell-container">
       {step1 && (
