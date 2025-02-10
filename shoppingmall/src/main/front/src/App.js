@@ -6,6 +6,7 @@ import Footer from "./component/footer";
 import Content from './component/content';
 import LoginPage from './component/loginPage';
 import SellPage from './component/sellPage';
+import Sell from './component/sell';
 import RegisterPage from './component/RegisterPage';
  import { BrowserRouter as Router, Route, Routes, useNavigate,useLocation } from "react-router-dom";
 import MainPage from './component/mainPage';
@@ -30,7 +31,8 @@ function Main() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/purchase" element={<Content />} />
-          <Route path="/sell" element={<SellPage />} />
+          <Route path="/sellPage" element={<SellPage />} />
+          <Route path="/sell" element={<Sell />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Routes>

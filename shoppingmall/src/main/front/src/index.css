@@ -12,6 +12,7 @@ body {
   font-family: 'MyFont', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
 }
 
 /* code 요소에도 동일 폰트 적용 */

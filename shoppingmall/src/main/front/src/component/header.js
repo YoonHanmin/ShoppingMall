@@ -51,7 +51,7 @@ function Header(){
       <div className="col-6 menu">
         <ul className="menu-list">
           <li><Link to="/purchase" className="no-style-link">구매하기</Link></li>
-          <li><Link to="/sell" className="no-style-link">판매하기</Link></li>
+          <li><Link to="/sellPage" className="no-style-link">판매하기</Link></li>
           <li>추가3</li>
           <li>추가4</li>
         </ul>
